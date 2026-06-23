@@ -7,6 +7,10 @@
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
+  /* respect reduced motion: swap the animated globe for a still */
+  var globe = document.getElementById('globe');
+  if (globe && reduceMotion && globe.dataset.still) globe.src = globe.dataset.still;
+
   /* hero entrance */
   function playHero() {
     document.querySelectorAll('.hero .reveal').forEach(function (el, i) {

@@ -68,6 +68,10 @@ ul,ol{list-style:none;padding:0}
 .hero__shot .bar{display:flex;align-items:center;gap:5px;padding:8px 12px;background:var(--ink)}
 .hero__shot .bar span{width:8px;height:8px;border-radius:50%;background:#4a483f}
 .hero__shot .bar em{margin-left:auto;font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:.66rem;color:#9b988c}
+.hero__shot--globe{position:relative;aspect-ratio:1/1;background:#0a0a14;max-width:440px;overflow:hidden}
+.hero__shot--globe img{width:100%;height:100%;object-fit:cover;display:block}
+.hero__shot--globe figcaption{position:absolute;left:12px;bottom:10px;font-family:"IBM Plex Mono",monospace;
+  font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:#8a8ea8;background:rgba(8,8,16,.5);padding:.2rem .5rem;border-radius:4px}
 .hero__stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:var(--bd)}
 .hero__stats li{padding:1.3rem 0;display:flex;flex-direction:column;gap:.15rem;border-right:1px solid var(--hair)}
 .hero__stats li:last-child{border-right:0}
