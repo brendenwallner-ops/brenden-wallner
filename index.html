@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brenden Wallner — I build and ship the products founders show off</title>
+  <meta name="description" content="Independent developer and designer. I take ideas from blank page to launched app or site — design, full-stack build, and the polish that makes people trust it." />
+  <meta name="author" content="Brenden Wallner" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Brenden Wallner — App & web development" />
+  <meta property="og:description" content="I design and build products people want to use — start to launch. Pasiflora AI, CAIRN, and more." />
+  <meta property="og:image" content="assets/pasiflora-landing.png" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23151510'/%3E%3Ctext x='50' y='70' font-family='Georgia,serif' font-size='62' font-weight='700' text-anchor='middle' fill='%232E37E0'%3EB%3C/text%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#work">Skip to work</a>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav" id="top">
+    <div class="nav__inner">
+      <a class="wordmark" href="#top" aria-label="Brenden Wallner — home">
+        <span class="wordmark__mark">BW</span>
+        <span class="wordmark__name">Brenden Wallner</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a class="nav__cta" href="#contact">Start a project</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow reveal" data-d="0">Independent developer &amp; designer · Southern California</p>
+          <h1 class="hero__title">
+            <span class="reveal" data-d="1">I build and ship the</span>
+            <span class="reveal" data-d="2">products founders</span>
+            <span class="reveal hero__title-accent" data-d="3">actually show off.</span>
+          </h1>
+          <p class="hero__sub reveal" data-d="4">
+            From blank page to launched app or site — I handle the design, the full-stack
+            build, and the polish most people skip. The kind of work you put your name on.
+          </p>
+          <div class="hero__actions reveal" data-d="5">
+            <a class="btn btn--primary" href="#contact">Start a project</a>
+            <a class="btn btn--ghost" href="#work">See the work <span aria-hidden="true">↓</span></a>
+          </div>
+          <ul class="hero__stats reveal" data-d="6">
+            <li><span class="stat__num">6+</span><span class="stat__label">products shipped</span></li>
+            <li><span class="stat__num">Next.js</span><span class="stat__label">+ Vercel, end to end</span></li>
+            <li><span class="stat__num">Design&nbsp;→&nbsp;Deploy</span><span class="stat__label">one person, whole stack</span></li>
+          </ul>
+        </div>
+
+        <div class="hero__stage" aria-hidden="true">
+          <figure class="frame frame--desktop float-a">
+            <div class="frame__bar">
+              <span></span><span></span><span></span>
+              <em class="frame__url">pasiflora.ai</em>
+            </div>
+            <img src="assets/pasiflora-landing.png" alt="" loading="eager" />
+          </figure>
+          <figure class="frame frame--phone float-b">
+            <span class="frame__notch"></span>
+            <img src="assets/cairn-mobile.png" alt="" loading="lazy" />
+          </figure>
+          <span class="stage__tag stage__tag--1">Pasiflora&nbsp;AI</span>
+          <span class="stage__tag stage__tag--2">CAIRN</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TICKER ===== -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span>Landing pages</span><i>✦</i><span>Full-stack apps</span><i>✦</i>
+        <span>Brand &amp; UI</span><i>✦</i><span>Next.js</span><i>✦</i><span>Stripe</span><i>✦</i>
+        <span>Auth &amp; databases</span><i>✦</i><span>Vercel deploys</span><i>✦</i><span>SEO</span><i>✦</i>
+        <span>Landing pages</span><i>✦</i><span>Full-stack apps</span><i>✦</i>
+        <span>Brand &amp; UI</span><i>✦</i><span>Next.js</span><i>✦</i><span>Stripe</span><i>✦</i>
+        <span>Auth &amp; databases</span><i>✦</i><span>Vercel deploys</span><i>✦</i><span>SEO</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ===== WORK ===== -->
+    <section class="work" id="work">
+      <header class="section-head">
+        <p class="eyebrow">Selected work</p>
+        <h2 class="section-title">Real products, launched and in use.</h2>
+        <p class="section-lead">No mockups, no maybes — every screen below is something I designed, built, and put live.</p>
+      </header>
+
+      <!-- Featured: Pasiflora -->
+      <article class="case tilt">
+        <div class="case__media">
+          <figure class="frame frame--desktop">
+            <div class="frame__bar"><span></span><span></span><span></span><em class="frame__url">pasiflora.ai</em></div>
+            <img src="assets/pasiflora-landing.png" alt="Pasiflora AI marketing site — Building the Human Layer for AI" loading="lazy" />
+          </figure>
+        </div>
+        <div class="case__body">
+          <p class="case__eyebrow">Startup · Marketplace platform</p>
+          <h3 class="case__title">Pasiflora&nbsp;AI</h3>
+          <p class="case__desc">
+            My own company — a marketplace connecting human experts with AI teams that
+            need high-quality data. I built the marketing site, the expert and client
+            portals, and the ops tooling behind it. Founder, designer, and engineer in one.
+          </p>
+          <ul class="chips">
+            <li>Next.js</li><li>Vercel</li><li>Gmail SMTP</li><li>Marketplace</li><li>Brand + UI</li>
+          </ul>
+          <p class="case__role"><span>Role</span> Founder · Design · Full-stack</p>
+        </div>
+      </article>
+
+      <!-- Featured: CAIRN -->
+      <article class="case case--reverse tilt">
+        <div class="case__media case__media--pair">
+          <figure class="frame frame--desktop">
+            <div class="frame__bar"><span></span><span></span><span></span><em class="frame__url">cairn.app</em></div>
+            <img src="assets/cairn-desktop.png" alt="CAIRN — The Feed: wins, lessons and owned setbacks" loading="lazy" />
+          </figure>
+          <figure class="frame frame--phone frame--phone-inset">
+            <span class="frame__notch"></span>
+            <img src="assets/cairn-mobile.png" alt="CAIRN mobile — goals broken into milestones" loading="lazy" />
+          </figure>
+        </div>
+        <div class="case__body">
+          <p class="case__eyebrow">Mobile-first · Social accountability</p>
+          <h3 class="case__title">CAIRN</h3>
+          <p class="case__desc">
+            An invite-only accountability app for men — goals broken into milestones,
+            a no-noise feed of wins and owned setbacks, teams and mentors. Designed the
+            whole product language and built it responsive from phone to desktop.
+          </p>
+          <ul class="chips">
+            <li>Next.js</li><li>Responsive</li><li>Auth</li><li>Real-time feed</li><li>Design system</li>
+          </ul>
+          <p class="case__role"><span>Role</span> Product design · Full-stack</p>
+        </div>
+      </article>
+
+      <!-- Secondary grid -->
+      <h3 class="work__more-head">More launched work</h3>
+      <div class="grid">
+        <article class="mini tilt">
+          <div class="mini__art mini__art--t3" role="img" aria-label="T3 Private Training Facility brand">
+            <span class="mini__logo">T3</span>
+            <ul class="mini__pillars">
+              <li>Nutritional</li><li>Physical</li><li>Mental</li>
+            </ul>
+          </div>
+          <div class="mini__body">
+            <p class="case__eyebrow">Small business · Fitness</p>
+            <h4>T3 Private Training</h4>
+            <p>Brand and booking site for a private gym in Santa Ana — real pricing, three-pillar identity, Stripe-ready checkout.</p>
+            <ul class="chips chips--sm"><li>Next.js</li><li>Stripe</li><li>Branding</li></ul>
+          </div>
+        </article>
+
+        <article class="mini tilt">
+          <div class="mini__art">
+            <img src="assets/cadence.jpg" alt="Cadence Coffee — warm cafe interior" loading="lazy" />
+          </div>
+          <div class="mini__body">
+            <p class="case__eyebrow">Portfolio · Hospitality</p>
+            <h4>Cadence Coffee</h4>
+            <p>A warm, photography-led site for a specialty roaster — story, menu, and visit details, live on GitHub Pages.</p>
+            <ul class="chips chips--sm"><li>Front-end</li><li>Responsive</li><li>GH Pages</li></ul>
+          </div>
+        </article>
+
+        <article class="mini tilt">
+          <div class="mini__art mini__art--dark">
+            <img src="assets/jason.jpg" alt="Blackwork cathedral tattoo by Jason" loading="lazy" />
+          </div>
+          <div class="mini__body">
+            <p class="case__eyebrow">Small business · Tattoo studio</p>
+            <h4>Jason — Blackwork</h4>
+            <p>Dark, gothic booking and portfolio site for an LA blackwork artist — gallery-forward with a built-in booking flow.</p>
+            <ul class="chips chips--sm"><li>Static</li><li>Booking</li><li>Art direction</li></ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="services" id="services">
+      <header class="section-head">
+        <p class="eyebrow">What I do</p>
+        <h2 class="section-title">Three ways I can help you ship.</h2>
+      </header>
+      <div class="svc-grid">
+        <article class="svc">
+          <h3 class="svc__title">Marketing &amp; landing sites</h3>
+          <p class="svc__desc">A site that works while you sleep — fast, responsive, and built to turn visitors into customers. Brand, copy, and SEO handled.</p>
+          <p class="svc__for"><span>Best for</span> Launching a product or business</p>
+          <p class="svc__time">Design to live in ~1–2 weeks</p>
+        </article>
+        <article class="svc svc--accent">
+          <h3 class="svc__title">Full-stack web apps</h3>
+          <p class="svc__desc">Real products, not prototypes. Auth, databases, payments, dashboards — built on Next.js and shipped to production on Vercel.</p>
+          <p class="svc__for"><span>Best for</span> Founders building an MVP or scaling a tool</p>
+          <p class="svc__time">Scoped per project</p>
+        </article>
+        <article class="svc">
+          <h3 class="svc__title">Brand &amp; UI design</h3>
+          <p class="svc__desc">Identity that looks like you mean it — logo, type, color, and a UI system that stays consistent across every single screen.</p>
+          <p class="svc__for"><span>Best for</span> A rebrand or your first real design</p>
+          <p class="svc__time">~1 week</p>
+        </article>
+      </div>
+
+      <!-- Process: a genuine sequence, so it's numbered -->
+      <ol class="process">
+        <li><span class="process__num">01</span><h4>Discovery</h4><p>A quick call to understand the goal, the audience, and what “done” looks like.</p></li>
+        <li><span class="process__num">02</span><h4>Design</h4><p>Clickable direction first — you see and approve the look before any code.</p></li>
+        <li><span class="process__num">03</span><h4>Build</h4><p>I build it for real: responsive, accessible, and fast, with you in the loop.</p></li>
+        <li><span class="process__num">04</span><h4>Launch</h4><p>Shipped to production, wired up, and handed over — with the details right.</p></li>
+      </ol>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about" id="about">
+      <div class="about__inner">
+        <p class="eyebrow">About</p>
+        <p class="about__lead">
+          I’m Brenden — a developer and designer in Southern California. I founded
+          <strong>Pasiflora AI</strong> and build products for founders who need something
+          real, fast.
+        </p>
+        <p class="about__body">
+          I handle the whole thing: the design, the code, the deploy, and the details
+          most people skip. You work with one person from first call to launch day — no
+          handoffs, no telephone game, no “that’s a different team.” If it ships with my
+          name on it, it works.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact" id="contact">
+      <div class="contact__grid">
+        <div class="contact__intro">
+          <p class="eyebrow">Start a project</p>
+          <h2 class="section-title">Let’s build your thing.</h2>
+          <p class="section-lead">Tell me what you’re making. I read every message and reply within a day.</p>
+          <a class="contact__mail" href="mailto:brenden.wallner@gmail.com">brenden.wallner@gmail.com</a>
+        </div>
+
+        <!-- To wire a real backend later: set action to your Formspree/endpoint URL
+             and remove the JS mailto handoff in script.js. -->
+        <form class="form" id="contact-form" novalidate>
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="type">What do you need?</label>
+            <select id="type" name="type" required>
+              <option value="" disabled selected>Choose one…</option>
+              <option>Marketing / landing site</option>
+              <option>Full-stack web app</option>
+              <option>Brand &amp; UI design</option>
+              <option>Not sure yet — let’s talk</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="budget">Rough budget <span class="opt">(optional)</span></label>
+            <select id="budget" name="budget">
+              <option value="" disabled selected>Pick a range…</option>
+              <option>Under $2k</option>
+              <option>$2k – $5k</option>
+              <option>$5k – $15k</option>
+              <option>$15k+</option>
+            </select>
+          </div>
+          <div class="field field--full">
+            <label for="message">Project details</label>
+            <textarea id="message" name="message" rows="4" placeholder="What are you building, and when do you need it?" required></textarea>
+          </div>
+          <button class="btn btn--primary form__submit" type="submit">Send it →</button>
+          <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <a class="wordmark" href="#top"><span class="wordmark__mark">BW</span><span class="wordmark__name">Brenden Wallner</span></a>
+      <p class="footer__tag">App &amp; web development · Southern California</p>
+      <a class="footer__mail" href="mailto:brenden.wallner@gmail.com">brenden.wallner@gmail.com</a>
+    </div>
+    <p class="footer__copy">© <span id="year">2026</span> Brenden Wallner. Designed &amp; built by me — naturally.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
