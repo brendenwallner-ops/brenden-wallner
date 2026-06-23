@@ -54,19 +54,12 @@
         </div>
         <h1 class="hero__title reveal">I build the<br>apps &amp; sites<br>founders <span class="red">ship.</span></h1>
         <div class="hero__btm">
-          <div class="reveal">
-            <p class="hero__sub">From blank page to launched product — I handle the design, the
-              full-stack build, and the polish most people skip. One person, the whole stack.</p>
-            <div class="btnrow">
-              <a class="btn btn--p" href="#contact">Start a project</a>
-              <a class="btn btn--g" href="#work">See the work →</a>
-            </div>
+          <p class="hero__sub reveal">From blank page to launched product — I handle the design, the
+            full-stack build, and the polish most people skip. One person, the whole stack.</p>
+          <div class="btnrow reveal">
+            <a class="btn btn--p" href="#contact">Start a project</a>
+            <a class="btn btn--g" href="#work">See the work →</a>
           </div>
-          <figure class="hero__shot hero__shot--globe reveal">
-            <div id="pf-globe" class="globe-mount" aria-hidden="true"></div>
-            <img class="globe-fallback" src="assets/pasiflora-globe.jpg" alt="Pasiflora AI — experts from around the world" loading="eager" />
-            <figcaption>pasifloraai.com · drag to explore</figcaption>
-          </figure>
         </div>
         <ul class="hero__stats reveal">
           <li><b>6+</b><span>products shipped</span></li>
@@ -117,9 +110,13 @@
             </div>
             <ul class="chips"><li>Next.js</li><li>Vercel</li><li>Gmail SMTP</li><li>Marketplace</li><li>Brand + UI</li></ul>
           </div>
-          <figure class="case__shot">
+          <figure class="case__shot globe-frame">
             <div class="bar"><span></span><span></span><span></span><em>pasifloraai.com</em></div>
-            <img src="assets/pasiflora.jpg" alt="Pasiflora AI — Building the Human Layer for AI" loading="lazy" />
+            <div class="globe-stage">
+              <div id="pf-globe" class="globe-mount" aria-hidden="true"></div>
+              <img class="globe-fallback" src="assets/pasiflora-globe.jpg" alt="Pasiflora AI — interactive experts globe" loading="lazy" />
+              <figcaption class="globe-cap">drag to explore →</figcaption>
+            </div>
           </figure>
         </article>
 
@@ -350,7 +347,7 @@
   <script>
   (function () {
     var mount = document.getElementById('pf-globe');
-    var fig = mount && mount.closest('.hero__shot--globe');
+    var fig = mount && mount.closest('figure');
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!mount || !fig || typeof Globe === 'undefined') return;
     try { var t = document.createElement('canvas');
