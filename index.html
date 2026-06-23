@@ -10,7 +10,14 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Brenden Wallner — App &amp; web development" />
   <meta property="og:description" content="I design and build products people want to use — start to launch." />
-  <meta property="og:image" content="assets/pasiflora.jpg" />
+  <meta property="og:image" content="https://brendenwallner-ops.github.io/brenden-wallner/assets/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://brendenwallner-ops.github.io/brenden-wallner/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Brenden Wallner — App &amp; web development" />
+  <meta name="twitter:description" content="I design and build products people want to use — start to launch." />
+  <meta name="twitter:image" content="https://brendenwallner-ops.github.io/brenden-wallner/assets/og.jpg" />
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23141310'/%3E%3Ctext x='50' y='72' font-family='Arial Black,sans-serif' font-size='66' font-weight='900' text-anchor='middle' fill='%23F0431F'%3EB%3C/text%3E%3C/svg%3E" />
 
@@ -56,8 +63,9 @@
             </div>
           </div>
           <figure class="hero__shot hero__shot--globe reveal">
-            <img src="assets/pasiflora-globe.jpg" alt="Pasiflora AI — experts from around the world" loading="eager" />
-            <figcaption>pasifloraai.com · experts worldwide</figcaption>
+            <div id="pf-globe" class="globe-mount" aria-hidden="true"></div>
+            <img class="globe-fallback" src="assets/pasiflora-globe.jpg" alt="Pasiflora AI — experts from around the world" loading="eager" />
+            <figcaption>pasifloraai.com · drag to explore</figcaption>
           </figure>
         </div>
         <ul class="hero__stats reveal">
@@ -240,15 +248,29 @@
     <!-- ===== ABOUT ===== -->
     <section class="about" id="about">
       <div class="wrap about__grid">
-        <div class="sechead sechead--inline"><h2>About</h2></div>
-        <div class="about__body">
-          <p class="about__lead">I’m Brenden — a developer and designer in Southern California. I founded
-            <strong>Pasiflora&nbsp;AI</strong> and build products for founders who need something real, fast.</p>
-          <p>I handle the whole thing: the design, the code, the deploy, and the details most people
-            skip. You work with one person from first call to launch day — no handoffs, no telephone
-            game, no “that’s a different team.” If it ships with my name on it, it works.</p>
-          <p>Most of my work runs on Next.js and ships to Vercel, but I care more about the outcome than
-            the stack. The goal is always the same: something you’re proud to show off.</p>
+        <figure class="about__photo">
+          <img src="assets/brenden.jpg" alt="Brenden Wallner" loading="lazy" />
+          <figcaption>Brenden Wallner · Southern California</figcaption>
+        </figure>
+        <div class="about__content">
+          <p class="eyebrow">About</p>
+          <h2 class="about__h">Hi — I’m Brenden.</h2>
+          <p class="about__lead">A developer and designer in Southern California, and the founder of
+            <strong>Pasiflora&nbsp;AI</strong>. I turn ideas into real, launched products.</p>
+          <p>I work solo and end-to-end — design, code, deploy, and the details most people skip — so
+            you get one person who actually owns the outcome, from the first call to launch day. No
+            handoffs, no telephone game, no “that’s a different team.” If it ships with my name on it,
+            it works.</p>
+          <p>Most of my work runs on Next.js and ships to Vercel, but I care more about the result than
+            the stack. And when I’m not shipping, I’m usually chasing a better view than my monitor —
+            like a few thousand feet up over a valley of hot-air balloons.</p>
+          <ul class="about__facts">
+            <li><span>Based in</span> Southern California</li>
+            <li><span>Founder of</span> Pasiflora AI</li>
+            <li><span>Stack</span> Next.js + Vercel</li>
+            <li><span>Status</span> Available · June 2026</li>
+          </ul>
+          <a class="btn btn--p" href="#contact">Start a project ↗</a>
         </div>
       </div>
     </section>
@@ -315,5 +337,67 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <!-- Interactive globe (same setup as pasifloraai.com): spins + drag to rotate.
+       Falls back to the static image if WebGL or the CDN is unavailable. -->
+  <script src="https://unpkg.com/globe.gl"></script>
+  <script>
+  (function () {
+    var mount = document.getElementById('pf-globe');
+    var fig = mount && mount.closest('.hero__shot--globe');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!mount || !fig || typeof Globe === 'undefined') return;
+    try { var t = document.createElement('canvas');
+      if (!(t.getContext('webgl') || t.getContext('experimental-webgl'))) return;
+    } catch (e) { return; }
+
+    // Expert clusters around major hubs (visual match to Pasiflora's live data).
+    var HUBS = [[40.7,-74.0,18],[37.8,-122.4,14],[34.0,-118.2,11],[41.9,-87.6,8],[42.4,-71.1,9],
+      [47.6,-122.3,6],[30.3,-97.7,6],[43.7,-79.4,7],[45.5,-73.6,4],[38.9,-77.0,7],
+      [51.5,-0.1,12],[48.9,2.35,8],[52.5,13.4,7],[52.4,4.9,5],[59.3,18.1,4],[47.4,8.5,4],
+      [55.7,37.6,4],[35.7,139.7,8],[37.6,127.0,5],[1.35,103.8,5],[19.1,72.9,6],[28.6,77.2,5],
+      [31.2,121.5,6],[22.3,114.2,4],[-33.9,151.2,5],[-37.8,144.9,3],[-23.6,-46.6,5],
+      [-34.6,-58.4,3],[19.4,-99.1,4],[-33.9,18.4,3],[6.5,3.4,3],[25.2,55.3,3],[32.1,34.8,3]];
+    var pts = [];
+    HUBS.forEach(function (h) {
+      for (var i = 0; i < h[2]; i++) pts.push({ lat: h[0] + (Math.random()-0.5)*6, lng: h[1] + (Math.random()-0.5)*6 });
+    });
+
+    function dot() {
+      var d = document.createElement('div');
+      d.style.cssText = 'width:7px;height:7px;border-radius:50%;background:#C4B5FD;' +
+        'box-shadow:0 0 8px 1px #A855F7;transform:translate(-50%,-50%);pointer-events:none';
+      return d;
+    }
+
+    var world = Globe()(mount)
+      .backgroundColor('rgba(0,0,0,0)')
+      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
+      .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
+      .showAtmosphere(true)
+      .atmosphereColor('#A855F7')
+      .atmosphereAltitude(0.22)
+      .htmlElementsData(pts)
+      .htmlElement(dot)
+      .htmlAltitude(0.005);
+
+    function size() { var r = mount.getBoundingClientRect(); world.width(r.width); world.height(r.height); }
+    size();
+    window.addEventListener('resize', size);
+
+    var c = world.controls();
+    c.enableZoom = false;
+    c.autoRotate = !reduce;
+    c.autoRotateSpeed = 0.5;
+    world.pointOfView({ lat: 25, lng: -20, altitude: 2.4 }, 0);
+
+    var cv = mount.querySelector('canvas');
+    if (cv) { cv.style.cursor = 'grab'; cv.style.display = 'block';
+      cv.addEventListener('pointerdown', function () { cv.style.cursor = 'grabbing'; });
+      window.addEventListener('pointerup', function () { cv.style.cursor = 'grab'; });
+    }
+    fig.classList.add('globe-ready');
+  })();
+  </script>
 </body>
 </html>
