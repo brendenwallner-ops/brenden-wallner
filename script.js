@@ -36,6 +36,28 @@
       .forEach(function (el) { el.classList.add('io-in'); });
   }
 
+  /* live previews: play the clip on hover (desktop) / in-view (touch) */
+  (function () {
+    var figs = document.querySelectorAll('.has-video');
+    if (!figs.length) return;
+    var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    figs.forEach(function (fig) {
+      var v = fig.querySelector('.shot-video');
+      if (!v) return;
+      var play = function () { fig.classList.add('playing'); var p = v.play(); if (p && p.catch) p.catch(function () {}); };
+      var stop = function () { fig.classList.remove('playing'); v.pause(); };
+      if (canHover) {
+        var card = fig.closest('.mini') || fig;
+        card.addEventListener('mouseenter', play);
+        card.addEventListener('mouseleave', function () { stop(); try { v.currentTime = 0; } catch (e) {} });
+      } else if ('IntersectionObserver' in window && !reduceMotion) {
+        new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { e.isIntersecting ? play() : stop(); });
+        }, { threshold: 0.6 }).observe(fig);
+      }
+    });
+  })();
+
   /* contact form — validates, hands off to a prefilled email (no backend needed) */
   var form = document.getElementById('contact-form');
   var status = document.getElementById('form-status');

@@ -139,6 +139,16 @@ ul,ol{list-style:none;padding:0}
 .mini__shot{aspect-ratio:16/10;overflow:hidden;border-bottom:var(--bd);background:var(--paper-2)}
 .mini__shot img{width:100%;height:100%;object-fit:cover;object-position:top}
 .mini__shot--dark{background:#0c0c0c}
+/* hover-to-play live preview */
+.mini__shot.has-video{position:relative}
+.mini__shot.has-video .shot-poster{position:relative;z-index:0}
+.mini__shot.has-video .shot-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  opacity:0;transition:opacity .4s ease;z-index:1;pointer-events:none}
+.mini__shot.has-video.playing .shot-video{opacity:1}
+.shot-badge{position:absolute;top:10px;left:10px;z-index:2;font-family:"IBM Plex Mono",monospace;
+  font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:#fff;
+  background:rgba(240,67,31,.92);padding:.2rem .5rem;border-radius:4px}
+.mini__shot.has-video.playing .shot-badge{background:rgba(20,19,16,.7)}
 .mini__shot--brand{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.9rem}
 .mini__shot--t3{background:radial-gradient(120% 120% at 50% 0%,#2a2a24,#131310 72%);color:#f3f3ee}
 .t3logo{font-family:"Archivo Black",sans-serif;font-size:3rem;letter-spacing:-.03em;line-height:1}
