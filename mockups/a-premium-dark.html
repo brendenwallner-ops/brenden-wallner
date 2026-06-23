@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mockup A — Premium Dark · Brenden Wallner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0E0E0C; --bg2:#15150F; --panel:#1A1A14;
+    --text:#EFEDE4; --muted:#9A988C; --line:#2A2A22;
+    --accent:#7C86FF; --accent-soft:rgba(124,134,255,.14);
+    --gold:#E6B566;
+  }
+  *{box-sizing:border-box;margin:0}
+  body{background:var(--bg);color:var(--text);font-family:"Inter",sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  ul{list-style:none;padding:0;margin:0}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3.5rem)}
+  .mono{font-family:"IBM Plex Mono",monospace}
+  .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:10;backdrop-filter:blur(10px);background:rgba(14,14,12,.7);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem clamp(1.25rem,4vw,3.5rem);max-width:1180px;margin:0 auto}
+  .brand{font-family:"Fraunces",serif;font-size:1.15rem;font-weight:600;letter-spacing:.01em}
+  .navlinks{display:flex;gap:1.8rem;align-items:center}
+  .navlinks a{color:var(--muted);font-size:.92rem}
+  .navlinks a:hover{color:var(--text)}
+  .navcta{border:1px solid var(--accent);color:var(--accent)!important;padding:.5rem 1.1rem;border-radius:8px;font-family:"IBM Plex Mono",monospace;font-size:.82rem}
+  .navcta:hover{background:var(--accent);color:#0E0E0C!important}
+
+  /* hero */
+  .hero{position:relative;padding:clamp(3.5rem,8vw,7rem) 0 clamp(3rem,6vw,5rem);overflow:hidden}
+  .glow{position:absolute;width:60vw;height:60vw;right:-10%;top:-15%;background:radial-gradient(circle,rgba(124,134,255,.22),transparent 60%);filter:blur(20px);pointer-events:none}
+  .hero-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+  .status{display:inline-flex;align-items:center;gap:.5rem;font-family:"IBM Plex Mono",monospace;font-size:.76rem;color:var(--muted);border:1px solid var(--line);padding:.35rem .8rem;border-radius:30px;margin-bottom:1.6rem}
+  .dot{width:7px;height:7px;border-radius:50%;background:#4ec97a}
+  h1{font-family:"Fraunces",serif;font-weight:400;font-size:clamp(2.6rem,5.6vw,4.6rem);line-height:1.02;letter-spacing:-.02em}
+  h1 em{font-style:italic;color:var(--accent)}
+  .sub{color:var(--muted);font-size:1.12rem;max-width:42ch;margin:1.5rem 0 2rem}
+  .btnrow{display:flex;gap:.8rem;flex-wrap:wrap}
+  .btn{font-family:"IBM Plex Mono",monospace;font-size:.9rem;padding:.85rem 1.5rem;border-radius:9px;border:1px solid transparent}
+  .btn-p{background:var(--accent);color:#0E0E0C;box-shadow:0 0 40px rgba(124,134,255,.4)}
+  .btn-g{border-color:var(--line);color:var(--text)}
+  .btn-g:hover{border-color:var(--text)}
+  .stats{display:flex;gap:2.4rem;margin-top:2.6rem;padding-top:1.6rem;border-top:1px solid var(--line)}
+  .stats .n{font-family:"Fraunces",serif;font-size:1.8rem}
+  .stats .l{font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .hero-shot{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:0 40px 100px rgba(0,0,0,.6)}
+  .hero-shot .bar{display:flex;gap:6px;padding:10px 14px;background:#100f0b;border-bottom:1px solid var(--line)}
+  .hero-shot .bar span{width:9px;height:9px;border-radius:50%;background:#33332a}
+  .float-phone{position:absolute;right:-18px;bottom:-30px;width:140px;border:6px solid #000;border-radius:22px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.6)}
+
+  /* trust strip */
+  .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2)}
+  .trust .wrap{display:flex;align-items:center;gap:2rem;padding-top:1.4rem;padding-bottom:1.4rem;flex-wrap:wrap;justify-content:center;font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--muted);letter-spacing:.05em}
+  .trust b{color:var(--text);font-weight:500}
+
+  /* work */
+  .work{padding:clamp(4rem,8vw,6rem) 0}
+  .sechead{margin-bottom:3rem}
+  .sechead h2{font-family:"Fraunces",serif;font-weight:400;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.01em;margin:.6rem 0}
+  .sechead p{color:var(--muted);max-width:48ch}
+  .case{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center;margin-bottom:4rem}
+  .case.rev .shotwrap{order:2}
+  .shotwrap{border-radius:12px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 70px rgba(0,0,0,.5)}
+  .shotwrap .bar{display:flex;gap:6px;padding:9px 13px;background:#100f0b;border-bottom:1px solid var(--line)}
+  .shotwrap .bar span{width:8px;height:8px;border-radius:50%;background:#33332a}
+  .case h3{font-family:"Fraunces",serif;font-weight:500;font-size:2rem;margin:.4rem 0 .7rem}
+  .case .desc{color:var(--muted);margin-bottom:1.3rem}
+  .result{display:flex;gap:2rem;margin:1.3rem 0;padding:1.1rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .result .n{font-family:"Fraunces",serif;font-size:1.5rem;color:var(--gold)}
+  .result .l{font-family:"IBM Plex Mono",monospace;font-size:.66rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+  .chips{display:flex;gap:.5rem;flex-wrap:wrap}
+  .chips li{font-family:"IBM Plex Mono",monospace;font-size:.72rem;padding:.28rem .7rem;border:1px solid var(--line);border-radius:20px;color:var(--muted)}
+
+  /* quote */
+  .quote{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(3.5rem,7vw,5.5rem) 0}
+  .quote blockquote{font-family:"Fraunces",serif;font-weight:400;font-size:clamp(1.5rem,3.2vw,2.3rem);line-height:1.3;margin:0 auto;text-align:center;max-width:760px}
+  .quote .who{font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--muted);text-align:center;margin-top:1.6rem}
+  .ph{color:var(--accent);opacity:.8}
+
+  /* cta */
+  .cta{padding:clamp(4rem,8vw,6rem) 0;text-align:center}
+  .cta h2{font-family:"Fraunces",serif;font-weight:400;font-size:clamp(2rem,4.5vw,3.2rem)}
+  .cta p{color:var(--muted);margin:1rem 0 2rem}
+  footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-family:"IBM Plex Mono",monospace;font-size:.8rem;text-align:center}
+
+  @media(max-width:860px){.hero-grid,.case,.case.rev .shotwrap{grid-template-columns:1fr}.case.rev .shotwrap{order:0}.navlinks a:not(.navcta){display:none}}
+</style>
+</head>
+<body>
+<nav><div class="nav">
+  <span class="brand">Brenden Wallner</span>
+  <div class="navlinks"><a href="#">Work</a><a href="#">Services</a><a href="#">About</a><a class="navcta" href="#">Start a project</a></div>
+</div></nav>
+
+<header class="hero"><div class="glow"></div><div class="wrap hero-grid">
+  <div>
+    <span class="status"><span class="dot"></span> Available for new projects · June 2026</span>
+    <h1>I design and build products founders <em>show off.</em></h1>
+    <p class="sub">From blank page to launched app or site — design, full-stack build, and the polish most people skip.</p>
+    <div class="btnrow"><a class="btn btn-p" href="#">Start a project</a><a class="btn btn-g" href="#">See the work →</a></div>
+    <div class="stats">
+      <div><div class="n">6+</div><div class="l">products shipped</div></div>
+      <div><div class="n">100%</div><div class="l">design → deploy</div></div>
+      <div><div class="n">Next.js</div><div class="l">+ Vercel</div></div>
+    </div>
+  </div>
+  <div class="hero-shot">
+    <div class="bar"><span></span><span></span><span></span></div>
+    <img src="../assets/pasiflora-landing.png" alt="Pasiflora AI" />
+    <div class="float-phone"><img src="../assets/cairn-mobile.png" alt="CAIRN" /></div>
+  </div>
+</div></header>
+
+<div class="trust"><div class="wrap">
+  <span>Trusted to build for</span>
+  <b>Pasiflora AI</b><span>·</span><b>CAIRN</b><span>·</span><b>T3 Training</b><span>·</span><b>Cadence Coffee</b>
+</div></div>
+
+<section class="work"><div class="wrap">
+  <div class="sechead"><span class="eyebrow">Selected work</span>
+    <h2>Real products, launched and in use.</h2>
+    <p>Every screen below is something I designed, built, and put live.</p>
+  </div>
+
+  <article class="case">
+    <div class="shotwrap"><div class="bar"><span></span><span></span><span></span></div><img src="../assets/pasiflora-landing.png" alt="Pasiflora AI"/></div>
+    <div>
+      <span class="eyebrow">Startup · Marketplace</span>
+      <h3>Pasiflora&nbsp;AI</h3>
+      <p class="desc">My own company — a marketplace connecting human experts with AI teams. Marketing site, expert + client portals, and the ops tooling behind it.</p>
+      <div class="result"><div><div class="n">Founder</div><div class="l">+ designer + engineer</div></div><div><div class="n">Live</div><div class="l">in production</div></div></div>
+      <ul class="chips"><li>Next.js</li><li>Vercel</li><li>Marketplace</li><li>Brand + UI</li></ul>
+    </div>
+  </article>
+
+  <article class="case rev">
+    <div class="shotwrap"><div class="bar"><span></span><span></span><span></span></div><img src="../assets/cairn-desktop.png" alt="CAIRN"/></div>
+    <div>
+      <span class="eyebrow">Mobile-first · Social</span>
+      <h3>CAIRN</h3>
+      <p class="desc">An invite-only accountability app for men — goals, a no-noise feed, teams and mentors. Designed the product language and built it responsive, phone to desktop.</p>
+      <div class="result"><div><div class="n">Phone → desktop</div><div class="l">fully responsive</div></div><div><div class="n">Design system</div><div class="l">end to end</div></div></div>
+      <ul class="chips"><li>Next.js</li><li>Auth</li><li>Real-time feed</li></ul>
+    </div>
+  </article>
+</div></section>
+
+<section class="quote"><div class="wrap">
+  <blockquote>“<span class="ph">[Your best client quote goes here]</span> — one or two sentences on what it was like to work with you and the result.”</blockquote>
+  <div class="who">— Founder, [Company] · <span class="ph">placeholder, easily added</span></div>
+</div></section>
+
+<section class="cta"><div class="wrap">
+  <h2>Let’s build your thing.</h2>
+  <p>Tell me what you’re making. I reply within a day.</p>
+  <a class="btn btn-p" href="#">Start a project</a>
+</div></section>
+
+<footer><div class="wrap">© 2026 Brenden Wallner · App &amp; web development · Southern California</div></footer>
+</body>
+</html>

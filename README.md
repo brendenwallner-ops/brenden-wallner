@@ -11,7 +11,7 @@ python3 -m http.server 8000   # then visit http://localhost:8000
 
 ## Structure
 - `index.html` — all content/sections
-- `styles.css` — design system (Bricolage Grotesque + IBM Plex Sans/Mono, ultramarine accent)
+- `styles.css` — design system (bold editorial: Archivo Black + Archivo + IBM Plex Mono, red accent on warm paper)
 - `script.js` — scroll reveals, nav state, card tilt, contact form
 - `assets/` — real project screenshots (Pasiflora, CAIRN, Cadence, Jason)
 
