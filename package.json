@@ -1,0 +1,9 @@
+{
+  "name": "brenden-wallner-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Brenden Wallner — portfolio & services site (static, with a Vercel serverless contact function).",
+  "dependencies": {
+    "nodemailer": "^6.9.14"
+  }
+}

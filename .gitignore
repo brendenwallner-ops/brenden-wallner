@@ -1,1 +1,4 @@
 Brenden W. Profile Pic copy.png
+.DS_Store
+node_modules/
+.vercel

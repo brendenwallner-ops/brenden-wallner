@@ -58,12 +58,14 @@
     });
   })();
 
-  /* contact form — validates, hands off to a prefilled email (no backend needed) */
+  /* contact form — POSTs to the /api/contact serverless function (nodemailer/Gmail).
+     Falls back to a prefilled email only if the request can't be made. */
   var form = document.getElementById('contact-form');
   var status = document.getElementById('form-status');
   function setStatus(msg, type) { status.textContent = msg; status.className = 'form__status' + (type ? ' ' + type : ''); }
 
   if (form) {
+    var submitBtn = form.querySelector('.form__submit');
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var firstInvalid = null;
@@ -77,15 +79,34 @@
       var d = {
         name: form.name.value.trim(), email: form.email.value.trim(),
         type: form.type.value, budget: form.budget.value || 'Not specified',
-        message: form.message.value.trim()
+        message: form.message.value.trim(), company: form.company ? form.company.value : ''
       };
-      var body = 'Name: ' + d.name + '\nEmail: ' + d.email + '\nNeeds: ' + d.type +
-        '\nBudget: ' + d.budget + '\n\n' + d.message + '\n';
-      var mailto = 'mailto:brenden.wallner@gmail.com?subject=' +
-        encodeURIComponent('New project inquiry — ' + d.name) + '&body=' + encodeURIComponent(body);
 
-      setStatus('Opening your email app… if nothing happens, write to brenden.wallner@gmail.com', 'ok');
-      window.location.href = mailto;
+      var origLabel = submitBtn ? submitBtn.textContent : '';
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
+      setStatus('Sending…', '');
+
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(d)
+      }).then(function (r) {
+        if (!r.ok) throw new Error('bad status ' + r.status);
+        return r.json();
+      }).then(function () {
+        form.reset();
+        setStatus('Thanks — your message is on its way. I’ll reply within a day.', 'ok');
+      }).catch(function () {
+        // Network/endpoint unavailable (e.g. static preview) — fall back to email.
+        var body = 'Name: ' + d.name + '\nEmail: ' + d.email + '\nNeeds: ' + d.type +
+          '\nBudget: ' + d.budget + '\n\n' + d.message + '\n';
+        var mailto = 'mailto:brenden.wallner@gmail.com?subject=' +
+          encodeURIComponent('New project inquiry — ' + d.name) + '&body=' + encodeURIComponent(body);
+        setStatus('Couldn’t send automatically — opening your email app instead.', 'err');
+        window.location.href = mailto;
+      }).then(function () {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = origLabel; }
+      });
     });
     form.addEventListener('input', function (e) {
       if (e.target.classList.contains('invalid')) e.target.classList.remove('invalid');
