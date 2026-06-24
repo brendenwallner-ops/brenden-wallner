@@ -100,7 +100,7 @@
         // Network/endpoint unavailable (e.g. static preview) — fall back to email.
         var body = 'Name: ' + d.name + '\nEmail: ' + d.email + '\nNeeds: ' + d.type +
           '\nBudget: ' + d.budget + '\n\n' + d.message + '\n';
-        var mailto = 'mailto:brendenwallner80@gmail.com?subject=' +
+        var mailto = 'mailto:brenden.wallner@gmail.com?subject=' +
           encodeURIComponent('New project inquiry — ' + d.name) + '&body=' + encodeURIComponent(body);
         setStatus('Couldn’t send automatically — opening your email app instead.', 'err');
         window.location.href = mailto;
