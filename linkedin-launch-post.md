@@ -1,6 +1,6 @@
 # LinkedIn announcement — Brenden Wallner portfolio
 
-**Link:** https://brendenwallner-ops.github.io/brenden-wallner/
+**Link:** https://brenden-wallner.vercel.app/
 
 ---
 
@@ -21,7 +21,7 @@ A few things I've shipped 👇
 
 If you're building something — or know a founder who is — take a look. Always happy to talk.
 
-🔗 https://brendenwallner-ops.github.io/brenden-wallner/
+🔗 https://brenden-wallner.vercel.app/
 
 #webdevelopment #nextjs #founders #startups #design
 
@@ -34,7 +34,7 @@ Took this somewhere over a valley of hot-air balloons and figured it was a good 
 I design and build apps and websites for founders — start to launch, one person, the whole stack. Founder of Pasiflora AI, plus a handful of other products and sites.
 
 Just put it all in one place 👇
-🔗 https://brendenwallner-ops.github.io/brenden-wallner/
+🔗 https://brenden-wallner.vercel.app/
 
 If you're building something, let's talk.
 
